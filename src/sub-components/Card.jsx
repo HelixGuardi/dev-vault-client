@@ -1,8 +1,8 @@
-function TechInfoPage() {
+function Card() {
 
-    return(
+    return (
         <div></div> // div temporario para evitar errores de consola
     )
 }
 
-export default TechInfoPage;
+export default Card;
