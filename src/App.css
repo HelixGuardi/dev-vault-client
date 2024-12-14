@@ -1,42 +1,81 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 
+FONDO PRINCIPAL Y ÁREAS GENERALES (BASE): #F5F7FA
+
+TEXTO PRINCIPAL: #2D3748
+
+ELEMEN. RESALTE Y BTNs PRIMARIOS (ACCIÓN): #4A90E2
+
+COLORES TAGS O CATEGORIAS (VIBRANTES):
+    =>Color 1 (Frontend): #FF7F50
+    =>Color 2 (Backend): #6FCF97
+    =>Color 3 (General): #FFD166
+
+LÍNEAS DIVISORAS O BORDES SUAVES: #E2E8F0
+
+BTNs SECUNDARIOS O HOVER EFFECTS: #2563EB
+
+ERRORES O ADVERTENCIAS: #E53E3E
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+    background-color: #F5F7FA;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul, ol {
+    list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+a {
+    text-decoration: none;
 }
 
-.card {
-  padding: 2em;
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+#logo-txt {
+    width: 70px;
+}
+
+#homeIcon-img {
+    width: 35px;
+}
+
+#logoIcon-img {
+    width: 50px;
+}
+
+.header-logo-section {
+    padding: 0px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#magnifyingGlass-icon {
+    width: 25px;
+}
+
+.header-nav-section {
+    padding: 0px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
