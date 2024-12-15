@@ -21,7 +21,7 @@ function CardList() {
     axios
       .get("http://localhost:5005/flipCards") // para conseguir los flipcards
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setFlipCards(response.data);
       })
       .catch((error) => {

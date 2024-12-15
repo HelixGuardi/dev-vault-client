@@ -179,12 +179,14 @@ a {
 
 .flip-card {
     padding: 10px;
-    width: 10.5rem;
+    margin: 5px;
+    width: 10rem;
+    height: auto;
 
-    background-color: #F5F7FA;
+    background-color: #E5E7EA;
     border: 3px solid #D2D8D0;
     border-radius: 20px;
-    box-shadow: 0px 0px 15px #333;
+    box-shadow: 0px 0px 15px #757575;
 
     display: flex;
     flex-direction: column;
@@ -196,9 +198,11 @@ a {
 }
 
 .flip-card:hover{
-    padding: 15px;
-    box-shadow: 5px 5px 10px #2563EB;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 5px 5px 15px #2563EB;
     border-radius: 10px;
+    background-color: D1D1D1;
 }
 
 .flip-card h2 {
@@ -210,6 +214,14 @@ a {
     background-color: #2563EB;
 }
 
+.flipCard-tags {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+}
 
 
 /*! *** FOOTER SECTION *** !*/
