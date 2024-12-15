@@ -1,7 +1,15 @@
+import CardList from "../components/CardList";
+import Sidebar from "../components/Sidebar"
+
 function HomePage() {
 
     return (
-        <div></div> // este div es temporario para evitar errores de consola
+        <>
+        <section className="homePage-section">
+            <Sidebar />
+            <CardList />
+        </section>
+        </>
     )
 }
 

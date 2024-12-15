@@ -1,7 +1,18 @@
 function Sidebar() {
 
     return(
-        <div></div> // div temporario para evitar errores de consola
+        <>
+            <section className="side-bar-container">
+                <div className="filter-section">
+                    {/* aqui van las opciones de filtro */}
+                </div>
+
+                <div className="technologies-list">
+                    {/* aqui va un listado de las technologias disponibles */}
+                </div>
+                <button className="add-new-FlipCard-btn">Add new Flip Card</button>
+            </section>
+        </>
     )
 }
 
