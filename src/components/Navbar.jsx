@@ -2,25 +2,23 @@ import SearchBar from "./SearchBar";
 import HomeIcon from "../assets/home-icon.png";
 import Logo from "../assets/dev-vault-logo-draw-and-text.png";
 import LogoTxt from "../assets/dev-vault-logo-text.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-  //todo buscar un icono de "home" para el src de img
-  //todo hacer el logo de la página y agregar al src de img
-  //todo buscar un icono de magnifying-glass y agregar al src de img
 
   return (
     <>
       <header className="header-container">
         <div className="header-logo-section">
           <img id="logo-txt" src={LogoTxt} alt="logo-txt" />
-          <button className="initial-config-btn">
-            <img id="homeIcon-img" src={HomeIcon} alt="home-btn" />
-          </button>
-          <img id="logoIcon-img" src={Logo} alt="logo-img" />
-        </div>
-
-        <div className="header-nav-section">
-          <SearchBar />
+          <div className="header-nav-section">
+            <SearchBar />
+          </div>
+          <Link to="/">
+            <button className="initial-config-btn home-logo-btn">
+              <img id="logoIcon-img" src={Logo} alt="logo-img" />
+            </button>
+          </Link>
         </div>
       </header>
     </>

@@ -34,7 +34,7 @@ function CardList() {
       <section className="card-list-container">
         {flipCards.map((eachCard, i) => {
           return (
-            <button key={i} className="flip-card-btn-container">
+            <button key={eachCard.id} className="flip-card-btn-container">
               <div className="flip-card">
                 <h2>{eachCard.title}</h2>
                 <div className="flipCard-tags">
