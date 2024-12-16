@@ -43,7 +43,9 @@ function Sidebar() {
             );
           })}
         </div>
+        <Link to="/addFlipCard">
         <button className="add-new-FlipCard-btn">Add new Flip Card</button>
+        </Link>
       </section>
     </>
   );

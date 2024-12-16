@@ -19,15 +19,14 @@ ERRORES O ADVERTENCIAS: #E53E3E
 
 
 
-
-
-
 /*! *** INITIAL CONFIGS *** !*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #2D3748;
+
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -353,10 +352,93 @@ a {
 
 
 
+/*! *** ADD NEW FLIPCARD PAGE *** !*/
+.form-container {
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+
+    border: 2px solid #E2E8F0;
+    border-radius: 10px;
+    border-top: none;
+    border-right: none;
+    box-shadow: -5px 5px 5px #BDBDBD;
+
+    transition: .3s;
+}
+
+.form-container input:hover {
+    box-shadow: -5px 5px 5px #2563EB;
+    padding: 15px;
+}
+
+.add-main-info {
+    margin: 20px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.add-main-info label {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.description-info {
+    margin: 20px;
+    padding: 20px;
+
+    border: 3px solid #E2E8F0;
+    background-color: #2D3748;
+    border-radius: 15px;
+    box-shadow: -5px 5px 15px #878787;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.description-info label {
+    color: #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#image-input-add {
+    text-align: center;
+}
+
+#description-input-add {
+    width: 217%;
+    height: 250px;
+}
+
+#add-new-card-btn {
+    width:100%;
+}
+
+
 /*! *** FOOTER SECTION *** !*/
 .footer-container {
     padding: 10px;
-    margin-top: 30px;
+    margin-top: 50px;
 
     display: flex;
     flex-wrap: wrap;
