@@ -37,7 +37,7 @@ function Sidebar() {
           <h3>TECH INFO</h3>
           {technologies.map((eachTech) => {
             return (
-              <Link to="/technologies/:idTech" key={eachTech.id}>
+              <Link to={`/infoTech/${eachTech.id}/${eachTech.name}`} key={eachTech.id}>
                 <span>{eachTech.name}</span>
               </Link>
             );

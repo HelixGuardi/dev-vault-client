@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar";
 import HomeIcon from "../assets/home-icon.png";
 import Logo from "../assets/dev-vault-logo-draw-and-text.png";
 import LogoTxt from "../assets/dev-vault-logo-text.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
 
@@ -14,6 +14,7 @@ function Navbar() {
           <div className="header-nav-section">
             <SearchBar />
           </div>
+          <NavLink to="/AboutUs" id="about-us-link">About Us</NavLink>
           <Link to="/">
             <button className="initial-config-btn home-logo-btn">
               <img id="logoIcon-img" src={Logo} alt="logo-img" />
