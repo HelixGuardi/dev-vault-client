@@ -17,6 +17,8 @@ function AddNewFlipCardPage() {
 
     const navigate = useNavigate();
 
+    const [technologyId, setTechnologyId] = useState('');
+
     const [title, setTitle] = useState("");
     const [resume, setResume] = useState("");
     const [officialDoc, setOfficialDoc] = useState("");
@@ -28,6 +30,9 @@ function AddNewFlipCardPage() {
     const handleOfficialDoc = (event) => setOfficialDoc(event.target.value);
     const handleDescription = (event) => setDescription(event.target.value);
     const handleImageUrl = (event) => setImageUrl(event.target.value);
+    const handleSelectTechnology = (event) => setTechnologyId(event.target.value);
+
+    console.log(technologyId)
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -38,7 +43,7 @@ function AddNewFlipCardPage() {
             resume: resume,
             description: description,
             officialDoc, officialDoc,
-            //technologyId => trabajar la idea. Quizás hacer un select y según la respuesta (condicional) se añade el ID correspondiente
+            technologyId: technologyId,
             imgUrl: imageUrl,
             flipCount: 0
         }
@@ -72,7 +77,7 @@ function AddNewFlipCardPage() {
                 Documentación Oficial:
                 <input type="text" placeholder="enlace" value={officialDoc} onChange={handleOfficialDoc}/>
             </label>
-            <select name="technology" /*onChange={handleSelectTechnology}*/>
+            <select name="technology" onChange={handleSelectTechnology} value={technologyId}>
                 {technologies.map((eachTech) => {
                     return(
                     <option key={eachTech.id} value={eachTech.id}>{eachTech.name}</option>
