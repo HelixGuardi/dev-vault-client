@@ -78,6 +78,7 @@ function AddNewFlipCardPage() {
                 <input type="text" placeholder="enlace" value={officialDoc} onChange={handleOfficialDoc}/>
             </label>
             <select name="technology" onChange={handleSelectTechnology} value={technologyId}>
+                <option>Select a Technology</option>
                 {technologies.map((eachTech) => {
                     return(
                     <option key={eachTech.id} value={eachTech.id}>{eachTech.name}</option>
