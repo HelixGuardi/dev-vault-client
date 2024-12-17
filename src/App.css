@@ -134,9 +134,6 @@ a {
 /*! *** HOME PAGE CONFIGS *** !*/
 .homePage-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
 }
 
 
@@ -205,21 +202,35 @@ a {
 }
 
 .add-new-FlipCard-btn:hover {
-    background-color: #BDBDBD;
+    background-color: #FFD166;
     border: 2px solid #F5F7FA;
     color:#2D3748;
+}
+
+#each-tech-name-link {
+    padding: 5px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+#each-tech-name-link:hover {
+    border: 1px solid #E2E8F0;
+    color: #FFD166;
 }
 
 
 
 /*! *** CARD LIST SECTION*** !*/
 .card-list-container {
-    width: 95%;
+    width: 105%;
+    height: auto;
     margin: 10px;
+
+    border-radius: 15px;
+
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
 }
 
 .flip-card-container {
@@ -236,6 +247,17 @@ a {
     transition: .3s;
 }
 
+#fliped-card-title {
+    width: 220px;
+    height: 30px;
+    text-align: center;
+    color:#E2E8F0;
+    text-shadow: 0px 0px 5px #2D3748;
+    border: 3px solid #E2E8F0;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #000;
+}
+
 .flip-card-container:hover{
     margin: 15px;
     border: 3px solid #E2E8F0;
@@ -245,9 +267,9 @@ a {
 }
 
 .flip-card {
-    padding: 10px;
-    width: 250px;
-    height: 250px;
+    padding: 15px;
+    width: 270px;
+    height: 300px;
     margin: 5px;
 
     background-color: #4A90E2;
@@ -263,6 +285,8 @@ a {
 
     transition: .3s;
 }
+
+
 
 .flip-card:hover{
     box-shadow: 5px 5px 15px #000;
@@ -283,6 +307,13 @@ a {
     border: 2px solid #E2E8F0;
     border-radius: 10px;
     background-color: #2563EB;
+}
+
+.flip-card-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .flipCard-btn {
@@ -306,6 +337,22 @@ a {
     color:#000;
 }
 
+#flip-back-btn {
+    border: none;
+    background-color: transparent;
+    transition: .3s;
+}
+
+
+#flip-back-arrow {
+    width: 45px;
+    filter: drop-shadow(0px 0px 5px #000 );
+}
+
+#flip-back-arrow:hover {
+    filter: drop-shadow(0px 0px 5px #FFD166);
+}
+
 .flipCard-tags {
     width: 85%;
 
@@ -326,13 +373,21 @@ a {
 }
 
 .delete-btn {
-    margin-top: 10px;
     border: none;
+    border-radius: 50px;
     background-color: transparent;
+
+    transition: .3s;
 }
 
 .delete-btn img {
     width: 50px;
+}
+
+.delete-btn:hover {
+    filter: drop-shadow(0px 0px 10px #FFD166);
+    border: 2px solid #E2E8F0;
+    border-radius: 50px;
 }
 
 
@@ -583,7 +638,7 @@ a {
 
 
 
-/*! *** FOOTER SECTION *** !*/
+/*! *** ABOUT US *** !*/
 .about-us-container {
     margin: 5px;
     padding: 5px;

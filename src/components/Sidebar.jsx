@@ -38,7 +38,7 @@ function Sidebar() {
           {technologies.map((eachTech) => {
             return (
               <Link to={`/infoTech/${eachTech.id}/${eachTech.name}`} key={eachTech.id}>
-                <span>{eachTech.name}</span>
+                <span id="each-tech-name-link">{eachTech.name}</span>
               </Link>
             );
           })}
