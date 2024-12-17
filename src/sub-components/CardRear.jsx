@@ -9,7 +9,7 @@ function CardRear(props) {
 
     const handleClick = (event) => {
         event.preventDefault();
-        props.setIsFlipped(!props.isFlipped);
+        setIsFlipped(!isFlipped);
         // console.log(props.isFlipped)
       }
     

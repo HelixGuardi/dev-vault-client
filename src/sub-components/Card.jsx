@@ -5,7 +5,7 @@ import CardRear from "./CardRear";
 
 function Card(props) {
     
-  const {eachCard, setFlipCards, getDataFunction} = props;
+  const {eachCard, setFlipCards, getData} = props;
 
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -14,7 +14,7 @@ function Card(props) {
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
         <CardFront isFlipped={isFlipped} setIsFlipped={setIsFlipped} eachCard={eachCard}/>
 
-        <CardRear isFlipped={isFlipped} setIsFlipped={setIsFlipped} eachCard={eachCard} getData={getDataFunction}/>
+        <CardRear isFlipped={isFlipped} setIsFlipped={setIsFlipped} eachCard={eachCard} getData={getData}/>
       </ReactCardFlip>
     </>
   );

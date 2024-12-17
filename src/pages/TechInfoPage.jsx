@@ -1,25 +1,29 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function TechInfoPage(props) {
-  // console.log(props);
-  const technoProp = props.technologies; //array con la colección technologies
-  const flipCardProp = props.flipCards; //array con los flipCards
-  // console.log(technoProp)
-  // console.log(flipCardProp)
+function TechInfoPage() {
+
+  const [foundTech, setFoundTech] = useState(null)
 
   const dynamicParams = useParams(); //parametros dinamicos
-  console.log(dynamicParams);
+  // console.log(dynamicParams);
 
-  const foundTech = technoProp.find((eachTech) => {
-    if (eachTech.id === dynamicParams.techId) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+  useEffect(() => {
+    axios.get(`http://localhost:5005/technologies/${dynamicParams.techId}?_embed=flipCards`)
+    .then((response) => {
+      // console.log(response);
+      setFoundTech(response.data);
+    })
+  }, [])
 
-  // console.log(foundTech);
+  if(foundTech === null) {
+    return <p>Loading...</p>
+  }
+
+  //todo agregar las flipCards correspondientes de esta technologia
+
 
   return (
     <div className="tech-info-container">

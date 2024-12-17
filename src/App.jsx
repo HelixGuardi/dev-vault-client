@@ -11,34 +11,6 @@ import CardDetailsPage from "./pages/CardDetailsPage";
 import TechInfoPage from "./pages/TechInfoPage";
 
 function App() {
-  const [technologies, setTechnologies] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5005/technologies")
-      .then((response) => {
-        // console.log(response);
-        setTechnologies(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  const [flipCards, setFlipCards] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5005/flipCards")
-      .then((response) => {
-        // console.log(response);
-        setFlipCards(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   return (
     <>
       <Navbar />
@@ -48,11 +20,11 @@ function App() {
         <Route path="/addFlipCard" element={<AddNewFlipCard />} />
         <Route
           path="/details/:flipCardId/:flipCardTitle"
-          element={<CardDetailsPage flipCards={flipCards} technologies={technologies}/>}
+          element={<CardDetailsPage />}
         />
         <Route
           path="/infoTech/:techId/:techName"
-          element={<TechInfoPage technologies={technologies} flipCards={flipCards}/>}
+          element={<TechInfoPage />}
         />
       </Routes>
       <Footer />

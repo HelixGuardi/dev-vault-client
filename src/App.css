@@ -246,9 +246,9 @@ a {
 
 .flip-card {
     padding: 10px;
-    width: 9.3rem;
+    width: 250px;
+    height: 250px;
     margin: 5px;
-    height: auto;
 
     background-color: #4A90E2;
     border: 3px solid #D2D8D0;

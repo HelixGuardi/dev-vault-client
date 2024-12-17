@@ -1,35 +1,31 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-function CardDetailsPage(props) {
-  // console.log("estos son los props:", props);
-  const { flipCards, technologies } = props;
+function CardDetailsPage() {
 
   const dynamicParams = useParams();
-  // console.log("estos son los params dynamic:",dynamicParams);
+  console.log(dynamicParams)
 
-  const foundCard = flipCards.find((eachCard) => {
-    if (eachCard.id === dynamicParams.flipCardId) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+  const [foundCard, setFoundCard] = useState(null);
 
-  const foundTech = technologies.find((eachTech) => {
-    if (eachTech.id === foundCard.technologyId) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+  useEffect(() => {
+    axios.get(`http://localhost:5005/flipCards/${dynamicParams.flipCardId}?_expand=technology`)
+    .then((response) => {
+      console.log(response);
+      setFoundCard(response.data);
+    })
+  }, [])
 
-  // console.log(foundCard);
+  if(foundCard === null) {
+    return <p>Loading...</p>
+  }
 
   return (
     <div className="card-details-container">
       <div className="main-card-info">
         <h1>{foundCard.title}</h1>
-        <h2>{foundTech.name}</h2>
+        <h2>{foundCard.technology.name}</h2>
         <a href={foundCard.officialDoc}>Documentación Oficial</a>
         <p>
           <span>Flip Count: {foundCard.flipCount}</span>
