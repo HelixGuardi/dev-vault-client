@@ -221,9 +221,25 @@ a {
     align-items: center;
 }
 
-.flip-card-btn-container {
+.flip-card-container {
     border: none;
+    border-radius: 10px;
     background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    transition: .3s;
+}
+
+.flip-card-container:hover{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px #878787;
+    background-color: #2563EB;
 }
 
 .flip-card {
@@ -247,7 +263,7 @@ a {
 }
 
 .flip-card:hover{
-    box-shadow: 5px 5px 15px #2563EB;
+    box-shadow: 5px 5px 15px #000;
     border-radius: 10px;
     background-color: D1D1D1;
 }
