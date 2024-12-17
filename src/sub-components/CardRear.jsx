@@ -18,7 +18,7 @@ function CardRear(props) {
             await axios.delete(`http://localhost:5005/flipCards/${eachCard.id}`)
             //navegar hacia otra página (no sirve)
             //función para actualizar el estado local del componente padre
-            
+            getData();
         } catch (error) {
             console.log(error);
         }
