@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TrashIcon from "../assets/trash-icon-btn.png"
 import axios from "axios";
 
@@ -17,7 +18,7 @@ function CardRear(props) {
             await axios.delete(`http://localhost:5005/flipCards/${eachCard.id}`)
             //navegar hacia otra página (no sirve)
             //función para actualizar el estado local del componente padre
-            getData()
+            
         } catch (error) {
             console.log(error);
         }
@@ -29,7 +30,9 @@ function CardRear(props) {
             <div className="flip-card">
                 <p>{eachCard.resume}</p>
                 <button onClick={handleClick} className="flipCard-btn">¡ Flip Back !</button>
-                <button className="flipCard-btn">Saber más</button>
+                <Link to={`/details/${eachCard.id}/${eachCard.title}`}>
+                    <button className="flipCard-btn">Saber más</button>
+                </Link>
             </div>
         </div>
     )

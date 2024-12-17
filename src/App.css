@@ -417,6 +417,88 @@ a {
 
 
 
+/*! *** CARD DETAILS PAGE *** !*/
+.card-details-container {
+    margin: 5px 20px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 50px;
+
+    border: 3px solid #E2E8F0;
+    border-radius: 30px;
+    background-color: #4A90E2;
+    box-shadow: -10px 10px 20px #878787;
+}
+
+.main-card-info {
+    padding: 10px;
+
+    border: 3px solid #E2E8F0;
+    border-radius: 20px;
+    background-color: #FF7F50;
+    box-shadow: -5px 5px 10px #2D3748;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-card-info span {
+    font-weight: bold;
+}
+
+.main-card-info a {
+    padding: 5px 15px;
+
+    color: #fff;
+
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+
+    transition: .3s;
+}
+
+.main-card-info a:hover {
+    border: 3px solid #E2E8F0;
+    padding: 10px 20px;
+    background-color: #FFD166;
+    color: #2D3748;
+    box-shadow: -10px 10px 15px #2563EB;
+}
+
+.description-card-info {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+}
+
+.description-card-info p {
+    margin-bottom: 20px;
+
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0px 0px 10px #2D3748;
+}
+
+.description-card-info img {
+    width: 100%;
+    height: auto;
+}
+
+#card-details-back-btn {
+    width: 100%;
+}
+
+
+
 /*! *** ADD NEW FLIPCARD PAGE *** !*/
 .form-container {
     padding: 15px;

@@ -48,7 +48,7 @@ function App() {
         <Route path="/addFlipCard" element={<AddNewFlipCard />} />
         <Route
           path="/details/:flipCardId/:flipCardTitle"
-          element={<CardDetailsPage />}
+          element={<CardDetailsPage flipCards={flipCards} technologies={technologies}/>}
         />
         <Route
           path="/infoTech/:techId/:techName"
