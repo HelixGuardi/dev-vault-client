@@ -17,13 +17,22 @@ function CardList() {
         console.log(error);
       });
   }, []);
+
+
+  const getData = () => {
+    axios.get("http://localhost:5005/flipCards")
+    .then((response) => {
+      // console.log(response);
+      setFlipCards(response.data);
+    })
+  }
   
 
   return (
       <section className="card-list-container">
         {flipCards.map((eachCard) => {
           return(
-            <Card eachCard={eachCard}/>
+            <Card eachCard={eachCard} getDataFunction={getData}/>
           )
         })}
       </section>

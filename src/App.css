@@ -215,6 +215,7 @@ a {
 /*! *** CARD LIST SECTION*** !*/
 .card-list-container {
     width: 95%;
+    margin: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -222,6 +223,7 @@ a {
 }
 
 .flip-card-container {
+    margin:5px;
     border: none;
     border-radius: 10px;
     background-color: transparent;
@@ -235,11 +237,11 @@ a {
 }
 
 .flip-card-container:hover{
-    padding: 10px;
-    margin: 5px;
+    margin: 15px;
+    border: 3px solid #E2E8F0;
     border-radius: 20px;
-    box-shadow: 5px 5px 10px #878787;
-    background-color: #2563EB;
+    box-shadow: 5px 5px 20px #2563EB;
+    background-color: #FFD166;
 }
 
 .flip-card {
@@ -248,7 +250,7 @@ a {
     margin: 5px;
     height: auto;
 
-    background-color: #E5E7EA;
+    background-color: #4A90E2;
     border: 3px solid #D2D8D0;
     border-radius: 20px;
     box-shadow: 0px 0px 15px #757575;
@@ -265,7 +267,13 @@ a {
 .flip-card:hover{
     box-shadow: 5px 5px 15px #000;
     border-radius: 10px;
-    background-color: D1D1D1;
+}
+
+.flip-card p {
+    font-weight: bold;
+    color: #D2D8D0;
+    text-align: center;
+    text-shadow: 0px 0px 5px #2D3748;
 }
 
 .flip-card h2 {
@@ -277,13 +285,54 @@ a {
     background-color: #2563EB;
 }
 
+.flipCard-btn {
+    padding: 10px;
+    margin: 5px;
+
+    border: 3px solid #E2E8F0;
+    border-radius: 10px;
+
+    background-color: transparent;
+
+    font-weight: bold;
+    color: #fff;
+
+    transition: .3s;
+}
+
+.flipCard-btn:hover {
+    background-color: #FFD166;
+    box-shadow: 5px 5px 5px #878787;
+    color:#000;
+}
+
 .flipCard-tags {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 15px;
+    width: 85%;
+
+    text-align: center;
+    font-weight: bold;
+
+    border: 3px solid #E2E8F0;
+    border-radius: 10px;  
+    background-color: #FFD166;
+    box-shadow: 5px 5px 5px #878787;
+
+}
+
+.flipCard-tags p {
+    color: #2D3748;
+    text-shadow: none;
+    font-size: 13px;   
+}
+
+.delete-btn {
+    margin-top: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+.delete-btn img {
+    width: 50px;
 }
 
 

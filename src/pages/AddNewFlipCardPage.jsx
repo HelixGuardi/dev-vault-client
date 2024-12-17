@@ -32,7 +32,7 @@ function AddNewFlipCardPage() {
     const handleImageUrl = (event) => setImageUrl(event.target.value);
     const handleSelectTechnology = (event) => setTechnologyId(event.target.value);
 
-    console.log(technologyId)
+    // console.log(technologyId)
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -50,7 +50,7 @@ function AddNewFlipCardPage() {
 
         axios.post("http://localhost:5005/flipCards", newFlipCard)
         .then(() => {
-            console.log("flip card añadido con exito")
+            // console.log("flip card añadido con exito")
             navigate("/")
         })
         .catch((error) => {
