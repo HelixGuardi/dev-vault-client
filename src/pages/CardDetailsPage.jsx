@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { PacmanLoader } from "react-spinners";
 
 function CardDetailsPage() {
 
@@ -18,7 +19,11 @@ function CardDetailsPage() {
   }, [])
 
   if(foundCard === null) {
-    return <p>Loading...</p>
+    return(
+      <div className="loading-container">
+        <PacmanLoader width={"100%"} color="#FFD166"/>
+      </div>
+  )
   }
 
   return (

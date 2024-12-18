@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "../sub-components/Card";
+import { PacmanLoader } from "react-spinners";
 
 function CardList(props) {
 
   // console.log(props);
-  const {  filteredTechs} = props;
+  const { filteredTechs } = props;
   // console.log(filteredCards)
 
   const [flipCards, setFlipCards] = useState([]);
@@ -25,6 +26,14 @@ function CardList(props) {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  if(flipCards.length === 0) {
+    return(
+      <div className="loading-container">
+        <PacmanLoader width={"100%"} color="#FFD166"/>
+      </div>
+    )
   }
 
   return (

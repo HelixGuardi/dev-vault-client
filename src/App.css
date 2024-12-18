@@ -44,6 +44,15 @@ a {
 
 
 /*! *** HEADER SECTION *** !*/
+.loading-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/*! *** HEADER SECTION *** !*/
 .header-container {
     margin-bottom: 30px;
 

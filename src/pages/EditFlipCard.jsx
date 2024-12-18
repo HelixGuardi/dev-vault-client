@@ -5,7 +5,7 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 function EditFlipCard() {
 
     const dynamicParams = useParams();
-    console.log(dynamicParams)
+    // console.log(dynamicParams)
 
     const [technologies, setTechnologies] = useState([]);
 
@@ -43,6 +43,10 @@ function EditFlipCard() {
             setImageUrl(response.data.imgUrl)
         })
     },[])
+
+    if(technologies.length === 0) {
+        return <p>Loading...</p>
+    }
 
 
     const handleFormSubmit = (event) => {

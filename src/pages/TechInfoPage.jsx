@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { PacmanLoader } from "react-spinners";
 
 function TechInfoPage() {
 
@@ -19,7 +20,11 @@ function TechInfoPage() {
   }, [])
 
   if(foundTech === null) {
-    return <p>Loading...</p>
+    return(
+      <div className="loading-container">
+        <PacmanLoader width={"100%"} color="#FFD166"/>
+      </div>
+    )
   }
 
   //todo agregar las flipCards correspondientes de esta technologia
