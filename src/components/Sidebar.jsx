@@ -7,7 +7,7 @@ function Sidebar() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5005/technologies")
+      .get(`${import.meta.env.VITE_SERVER_URL}/technologies`)
       .then((response) => {
         // console.log(response);
         setTechnologies(response.data);

@@ -10,7 +10,7 @@ function CardDetailsPage() {
   const [foundCard, setFoundCard] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5005/flipCards/${dynamicParams.flipCardId}?_expand=technology`)
+    axios.get(`${import.meta.env.VITE_SERVER_URL}/flipCards/${dynamicParams.flipCardId}?_expand=technology`)
     .then((response) => {
       console.log(response);
       setFoundCard(response.data);

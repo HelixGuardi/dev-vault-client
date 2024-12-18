@@ -7,7 +7,7 @@ function AddNewFlipCardPage() {
     const [technologies, setTechnologies] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5005/technologies")
+        axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies`)
         .then((response) => {
             // console.log(response);
             setTechnologies(response.data)
@@ -48,7 +48,7 @@ function AddNewFlipCardPage() {
             flipCount: 0
         }
 
-        axios.post("http://localhost:5005/flipCards", newFlipCard)
+        axios.post(`${import.meta.env.VITE_SERVER_URL}/flipCards`, newFlipCard)
         .then(() => {
             // console.log("flip card añadido con exito")
             navigate("/")

@@ -13,7 +13,7 @@ function CardList() {
 
   const getData = () => {
     axios
-      .get("http://localhost:5005/flipCards?_expand=technology") // para conseguir los flipcards
+      .get(`${import.meta.env.VITE_SERVER_URL}/flipCards?_expand=technology`) // para conseguir los flipcards
       .then((response) => {
         // console.log(response);
         setFlipCards(response.data);

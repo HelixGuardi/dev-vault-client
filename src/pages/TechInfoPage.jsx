@@ -11,7 +11,7 @@ function TechInfoPage() {
   // console.log(dynamicParams);
 
   useEffect(() => {
-    axios.get(`http://localhost:5005/technologies/${dynamicParams.techId}?_embed=flipCards`)
+    axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies/${dynamicParams.techId}?_embed=flipCards`)
     .then((response) => {
       // console.log(response);
       setFoundTech(response.data);
