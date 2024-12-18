@@ -30,7 +30,12 @@ ERRORES O ADVERTENCIAS: #E53E3E
 }
 
 body {
-    background-color: #F1F1F1;
+    /* background-color: #F1F1F1; */
+    /* background-image: url("./assets/creative-web-page-wallpaper-pencil.jpg"); */
+    background-image: url("./assets/full-white-web-page-wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 ul, ol {
@@ -54,7 +59,7 @@ a {
 
 /*! *** HEADER SECTION *** !*/
 .header-container {
-    margin: 10px 5px;
+    margin: 15px 20px;
 
     border: 3px solid #E2E8F0;
     border-radius: 15px;
@@ -159,6 +164,8 @@ a {
 
 /*! *** HOME PAGE CONFIGS *** !*/
 .homePage-section {
+    margin: 10px;
+    padding: 10px;
     display: flex;
 }
 
@@ -166,8 +173,8 @@ a {
 
 /*! *** SIDEBAR SECTION *** !*/
 .side-bar-container {
-    width: 45%;
-    height: 500px;
+    width: 220px;
+    height: 635px;
     padding: 15px;
     margin: 5px;
 
@@ -763,11 +770,12 @@ a {
 /*! *** FOOTER SECTION *** !*/
 .footer-container {
     padding: 10px;
-    margin: 15px 10px;
+    margin: 50px 20px;
 
     border: 3px solid #E2E8F0;
     border-radius: 15px;
     box-shadow: -5px 5px 10px #2563EB;
+    /* background-color: #e5e7eA; */
 
     display: flex;
     flex-wrap: wrap;
@@ -809,3 +817,6 @@ a {
     border-radius: 10px;
     box-shadow: 0px 0px 20px #BDBDBD;
 }
+
+
+

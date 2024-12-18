@@ -3,7 +3,6 @@ import LogoTxt from "../assets/dev-vault-logo-text.png"
 
 function Footer() {
   return (
-    <>
       <footer className="footer-container">
       <Link to="/">
         <button className="initial-config-btn home-logo-btn">
@@ -18,7 +17,6 @@ function Footer() {
             <a className="a-link" id="linkedin-link" href="https://www.linkedin.com/in/victorhugoguardiolapereira/">Linkedin</a>
         </div>
       </footer>
-    </>
   );
 }
 
