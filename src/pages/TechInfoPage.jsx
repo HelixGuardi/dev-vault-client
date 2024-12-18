@@ -3,31 +3,36 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { PacmanLoader } from "react-spinners";
+import Card from "../sub-components/Card";
 
 function TechInfoPage() {
-
-  const [foundTech, setFoundTech] = useState(null)
+  const [foundTech, setFoundTech] = useState(null);
+  const [flipCards, setFlipCards] = useState([]);
 
   const dynamicParams = useParams(); //parametros dinamicos
   // console.log(dynamicParams);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies/${dynamicParams.techId}?_embed=flipCards`)
-    .then((response) => {
-      // console.log(response);
-      setFoundTech(response.data);
-    })
-  }, [])
+    axios
+      .get(
+        `${import.meta.env.VITE_SERVER_URL}/technologies/${
+          dynamicParams.techId
+        }?_embed=flipCards`
+      )
+      .then((response) => {
+        // console.log(response);
+        setFoundTech(response.data);
+        setFlipCards(response.data.flipCards)
+      });
+  }, []);
 
-  if(foundTech === null) {
-    return(
+  if (foundTech === null) {
+    return (
       <div className="loading-container">
-        <PacmanLoader width={"100%"} color="#FFD166"/>
+        <PacmanLoader width={"100%"} color="#FFD166" />
       </div>
-    )
+    );
   }
-
-  //todo agregar las flipCards correspondientes de esta technologia
 
 
   return (
@@ -45,10 +50,17 @@ function TechInfoPage() {
           <h5>Description:</h5>
           <p>{foundTech.description}</p>
         </div>
+        <Link to="/">
+          <button className="back-home-btn">Atrás</button>
+        </Link>
       </section>
-      <Link to="/">
-        <button className="back-home-btn">Atrás</button>
-      </Link>
+      <div className="related-flip-cards-container">
+        {flipCards.map((eachCard) => {
+          return(
+            <Card key={eachCard.id} eachCard={eachCard}/>
+          )
+        })}
+      </div>
     </div>
   );
 }

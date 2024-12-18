@@ -14,8 +14,8 @@ function Footer() {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quod neque, accusamus ex numquam id ut quae deleniti aliquid facere reiciendis nulla voluptatum dolorum possimus perspiciatis odit voluptates cum pariatur.</p>
         </div>
         <div className="footer-links">
-            <a className="a-link" id="github-link" href="#">Git Hub</a>
-            <a className="a-link" id="linkedin-link" href="#">Linkedin</a>
+            <a className="a-link" id="github-link" href="https://github.com/HelixGuardi">Git Hub</a>
+            <a className="a-link" id="linkedin-link" href="https://www.linkedin.com/in/victorhugoguardiolapereira/">Linkedin</a>
         </div>
       </footer>
     </>
