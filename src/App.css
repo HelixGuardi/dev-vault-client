@@ -30,7 +30,7 @@ ERRORES O ADVERTENCIAS: #E53E3E
 }
 
 body {
-    background-color: #F5F7FA;
+    background-color: #F1F1F1;
 }
 
 ul, ol {
@@ -43,7 +43,7 @@ a {
 
 
 
-/*! *** HEADER SECTION *** !*/
+/*! *** LOADING SECTION *** !*/
 .loading-container {
     width: 100%;
     display: flex;
@@ -54,7 +54,11 @@ a {
 
 /*! *** HEADER SECTION *** !*/
 .header-container {
-    margin-bottom: 30px;
+    margin: 10px 5px;
+
+    border: 3px solid #E2E8F0;
+    border-radius: 15px;
+    box-shadow: -5px 5px 10px #2563EB;
 
     display: flex;
     flex-direction: column;
@@ -150,12 +154,14 @@ a {
 /*! *** SIDEBAR SECTION *** !*/
 .side-bar-container {
     width: 45%;
-    height: 27.6rem;
-    padding: 10px;
+    height: 500px;
+    padding: 15px;
+    margin: 5px;
 
     background-color: #2563EB;
     border: 3px solid #E2E8F0;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: -5px 5px 15px #878787;
 
     display: flex;
     flex-direction: column;
@@ -198,6 +204,7 @@ a {
 }
 
 .add-new-FlipCard-btn {
+    width: 100%;
     padding: 10px;
 
     color:#E5E7EA;
@@ -217,12 +224,12 @@ a {
 }
 
 #each-tech-name-link {
-    padding: 5px;
     border-radius: 10px;
     transition: .3s;
 }
 
 #each-tech-name-link:hover {
+    padding: 5px 20px;
     border: 1px solid #E2E8F0;
     color: #FFD166;
 }
@@ -231,7 +238,7 @@ a {
 
 /*! *** CARD LIST SECTION*** !*/
 .card-list-container {
-    width: 105%;
+    width: 115%;
     height: auto;
     margin: 10px;
 
@@ -277,7 +284,7 @@ a {
 
 .flip-card {
     padding: 15px;
-    width: 270px;
+    width: 250px;
     height: 300px;
     margin: 5px;
 
@@ -721,7 +728,11 @@ a {
 /*! *** FOOTER SECTION *** !*/
 .footer-container {
     padding: 10px;
-    margin-top: 50px;
+    margin: 15px 10px;
+
+    border: 3px solid #E2E8F0;
+    border-radius: 15px;
+    box-shadow: -5px 5px 10px #2563EB;
 
     display: flex;
     flex-wrap: wrap;

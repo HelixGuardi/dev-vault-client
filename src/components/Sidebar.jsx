@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { PacmanLoader } from "react-spinners";
 
 function Sidebar(props) {
 
@@ -23,6 +24,13 @@ function Sidebar(props) {
     });
   }, []);
   
+  if(technologies.length === 0) {
+    return(
+      <div className="loading-container">
+        <PacmanLoader width={"100%"} color="#FFD166"/>
+      </div>
+    )
+  }
 
   const handleCheckBoxChange = (event) => {
     // console.log(event.target.value); //entrega el nombre de cada casita marcada: JavaScript, HTML, CSS o React en este caso
