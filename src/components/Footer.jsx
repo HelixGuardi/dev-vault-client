@@ -10,7 +10,8 @@ function Footer() {
         </button>
       </Link>
         <div className="text-container">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quod neque, accusamus ex numquam id ut quae deleniti aliquid facere reiciendis nulla voluptatum dolorum possimus perspiciatis odit voluptates cum pariatur.</p>
+            <p>DevVault - Tu repositorio de conocimientos y recursos para desarrolladores.</p>
+            <p>© 2024 DevVault. Todos los derechos reservados.</p>
         </div>
         <div className="footer-links">
             <a className="a-link" id="github-link" href="https://github.com/HelixGuardi">Git Hub</a>

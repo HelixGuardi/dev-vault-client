@@ -30,6 +30,8 @@ ERRORES O ADVERTENCIAS: #E53E3E
 }
 
 body {
+    min-height: 100vh;
+
     /* background-color: #F1F1F1; */
     background-image: url("./assets/trello-bg.png");
     background-repeat: no-repeat;
@@ -44,7 +46,6 @@ ul, ol {
 a {
     text-decoration: none;
 }
-
 
 
 /*! *** LOADING SECTION *** !*/
@@ -178,8 +179,8 @@ a {
 
 /*! *** HOME PAGE CONFIGS *** !*/
 .homePage-section {
-    margin: 10px;
-    padding: 10px;
+    padding: 20px;
+    margin-bottom: 35px;
     display: flex;
 }
 
@@ -310,8 +311,7 @@ a {
     margin: 15px;
     border: 3px solid #E2E8F0;
     border-radius: 20px;
-    box-shadow: 5px 5px 20px #2563EB;
-    background-color: #FFD166;
+    box-shadow: 5px 5px 20px #FFD166;
 }
 
 .flip-card {
@@ -633,6 +633,12 @@ a {
 /*! *** ADD NEW FLIPCARD PAGE *** !*/
 .form-container {
     padding: 15px;
+    margin: 25px;
+
+    border: 3px solid #E2E8F0;
+    border-radius: 15px;
+    background-color: #4A90E2;
+    box-shadow: 0px 0px 20px #000;
 
     display: flex;
     flex-direction: column;
@@ -670,6 +676,9 @@ a {
 
 .form-main-info label {
     margin: 10px 0;
+    font-weight: bold;
+    color: #E2E8F0;
+    text-shadow: 0px 0px 10px #878787;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -680,7 +689,9 @@ a {
     height: 45px;
     margin-top: 15px;
 
-    border: 3px solid #2D3748;
+    color: #fff;
+
+    border: 3px solid #E2E8F0;
     border-radius: 10px;
     background-color: transparent;
 
@@ -693,7 +704,7 @@ a {
     background-color: #2563EB;
     color: #E2E8F0;
     padding: 10px;
-    box-shadow: 0px 5px 10px #878787;
+    box-shadow: 0px 0px 10px #FFD166;
 }
 
 .description-info {
@@ -737,8 +748,14 @@ a {
 
 /*! *** ABOUT US *** !*/
 .about-us-container {
-    margin: 5px;
-    padding: 5px;
+    margin: 20px;
+    padding: 20px;
+
+    border: 3px solid #E2E8F0;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 15px #000;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -753,6 +770,7 @@ a {
 .about-us-head {
     padding: 10px;
     margin: 5px;
+    width: 90%;
 
     border-radius: 10px;
 
@@ -766,12 +784,16 @@ a {
 
 .about-us-head:hover {
     border: 3px solid #E2E8F0;
-    box-shadow: -5px 5px 15px #2563EB;
-    background-color: #E5E7EA;
+    box-shadow: -5px 5px 15px #FFD166;
 }
 
 .about-us-head img{
     width: 200px;
+    filter: drop-shadow(0px 0px 20px #fff);
+}
+
+.about-us-head h1 {
+    color: #E2E8F0;
 }
 
 .about-us-content {
@@ -795,6 +817,11 @@ a {
 .about-us-content h2 {
     font-size: 20px;
     text-align: center;
+    color: #E2E8F0;
+}
+
+.about-us-content span {
+    color: #4A90E2;
 }
 
 .about-us-content:hover {
@@ -802,10 +829,14 @@ a {
 
 }
 
+.about-us-description {
+    color: #E2E8F0;
+}
+
 /*! *** FOOTER SECTION *** !*/
 .footer-container {
     padding: 10px;
-    margin: 50px 20px;
+    margin: 15px 20px;
 
     border: 3px solid #E2E8F0;
     border-radius: 15px;
