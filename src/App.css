@@ -279,7 +279,7 @@ a {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 25px;
 
@@ -548,6 +548,10 @@ a {
     height: auto;
 }
 
+#card-details-edit-btn {
+    width: 100%;
+}
+
 #card-details-back-btn {
     width: 100%;
 }
@@ -582,7 +586,7 @@ a {
     padding: 15px;
 }
 
-.add-main-info {
+.form-main-info {
     margin: 20px;
     padding: 10px;
 
@@ -592,7 +596,7 @@ a {
     gap: 10px;
 }
 
-.add-main-info label {
+.form-main-info label {
     margin: 10px 0;
     display: flex;
     flex-direction: column;
@@ -623,7 +627,7 @@ a {
     gap: 5px;
 }
 
-#image-input-add {
+.image-input-add {
     text-align: center;
 }
 

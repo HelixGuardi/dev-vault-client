@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import AddNewFlipCard from "./pages/AddNewFlipCardPage";
 import CardDetailsPage from "./pages/CardDetailsPage";
 import TechInfoPage from "./pages/TechInfoPage";
+import EditFlipCard from "./pages/EditFlipCard";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           path="/infoTech/:techId/:techName"
           element={<TechInfoPage />}
         />
+        <Route path="/details/edit-card/:flipCardId/:flipCardTitle" element={ <EditFlipCard /> } />
       </Routes>
       <Footer />
     </>

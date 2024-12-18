@@ -36,6 +36,11 @@ function CardDetailsPage() {
         <img src={foundCard.imgUrl} alt="related Image" />
       </div>
       <div className="card-details-btn-container">
+        <Link to={`/details/edit-card/${foundCard.id}/${foundCard.title}`}>
+          <button className="flipCard-btn" id="card-details-edit-btn">
+            EDIT
+          </button>
+        </Link>
         <Link to="/">
           <button className="flipCard-btn" id="card-details-back-btn">
             BACK

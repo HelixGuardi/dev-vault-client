@@ -1,19 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
-function AddNewFlipCardPage() {
+function EditFlipCard() {
+
+    const dynamicParams = useParams();
+    console.log(dynamicParams)
 
     const [technologies, setTechnologies] = useState([]);
-
-    useEffect(() => {
-        axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies`)
-        .then((response) => {
-            // console.log(response);
-            setTechnologies(response.data)
-        })
-    }, [])
-
 
     const navigate = useNavigate();
 
@@ -31,26 +25,41 @@ function AddNewFlipCardPage() {
     const handleDescription = (event) => setDescription(event.target.value);
     const handleImageUrl = (event) => setImageUrl(event.target.value);
     const handleSelectTechnology = (event) => setTechnologyId(event.target.value);
+    
+    useEffect(() => {
+        axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies`)
+        .then((response) => {
+            // console.log(response);
+            setTechnologies(response.data)
+        })
 
-    // console.log(technologyId)
+        axios.get(`${import.meta.env.VITE_SERVER_URL}/flipCards/${dynamicParams.flipCardId}`)
+        .then((response) => {
+            setTitle(response.data.title)
+            setResume(response.data.resume)
+            setDescription(response.data.description)
+            setOfficialDoc(response.data.officialDoc)
+            setTechnologyId(response.data.technologyId)
+            setImageUrl(response.data.imgUrl)
+        })
+    },[])
+
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        // console.log("testing", title, resume, officialDoc, description, imageUrl)
 
-        const newFlipCard = {
+        const editedFlipCard = {
             title: title,
             resume: resume,
             description: description,
             officialDoc, officialDoc,
             technologyId: technologyId,
             imgUrl: imageUrl,
-            flipCount: 0
         }
 
-        axios.post(`${import.meta.env.VITE_SERVER_URL}/flipCards`, newFlipCard)
+
+        axios.put(`${import.meta.env.VITE_SERVER_URL}/flipCards/${dynamicParams.flipCardId}`, editedFlipCard)
         .then(() => {
-            // console.log("flip card añadido con exito")
             navigate("/")
         })
         .catch((error) => {
@@ -59,10 +68,11 @@ function AddNewFlipCardPage() {
 
     }
 
-  return (
+
+    return(
     <div className="form-container">
-      <form id="add-flipCard-form" onSubmit={handleFormSubmit}>
-        <h1>Agrega un FlipCard</h1>
+      <form id="edit-flipCard-form" onSubmit={handleFormSubmit}>
+        <h1>Edit your FlipCard</h1>
 
         <div className="form-main-info">
             <label>
@@ -99,10 +109,10 @@ function AddNewFlipCardPage() {
             </label>
         </div>
 
-        <button className="back-home-btn" id="add-new-card-btn">Agregar Nuevo FlipCard!</button>
+        <button className="back-home-btn" id="add-new-card-btn">Edit FlipCard!</button>
       </form>
     </div>
-  );
+    )
 }
 
-export default AddNewFlipCardPage;
+export default EditFlipCard;
