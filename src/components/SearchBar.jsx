@@ -64,15 +64,15 @@ function SearchBar() {
         <div id="search-results">
           {techResults.map((eachTech) => {
             return(
-              <Link to={`/infoTech/${eachTech.id}/${eachTech.name}`}>
-                <p>{eachTech.name}</p>
+              <Link to={`/infoTech/${eachTech.id}/${eachTech.name}`} key={eachTech.id}>
+                <p className="search-result-line">{eachTech.name}</p>
               </Link>
             )
           })}
           {searchResult.map((eachResult) => {
             return(
               <Link to={`/details/${eachResult.id}/${eachResult.title}`} key={eachResult.id}>
-                <p>{eachResult.title}</p>;
+                <p className="search-result-line">{eachResult.title}</p>
               </Link>
             ) 
           })}
