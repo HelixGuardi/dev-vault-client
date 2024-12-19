@@ -16,7 +16,7 @@ function CardDetailsPage() {
       // console.log(response);
       setFoundCard(response.data);
     })
-  }, [])
+  }, [dynamicParams.flipCardId])
 
   if(foundCard === null) {
     return(

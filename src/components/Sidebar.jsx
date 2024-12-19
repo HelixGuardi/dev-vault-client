@@ -73,10 +73,12 @@ function Sidebar(props) {
           <h3>FILTRAR</h3>
           {technologies.map((eachTech) => {
             return (
+              <>
                 <label key={eachTech.id}>
+                </label>
                   <input type="checkbox" style={{marginRight: "5px"}} value={eachTech.name} onChange={handleCheckBoxChange} />
                   {eachTech.name}
-                </label>
+              </>
             );
           })}
         </div>

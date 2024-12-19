@@ -149,6 +149,11 @@ a {
     color: #F5F7FA;
 }
 
+#search-results {
+    padding: 5px;
+    background-color: #fff;
+}
+
 #magnifying-glass-btn {
     border-radius: 5px;
     transition: .3s;

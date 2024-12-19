@@ -1,5 +1,4 @@
 import SearchBar from "./SearchBar";
-import HomeIcon from "../assets/home-icon.png";
 import Logo from "../assets/dev-vault-logo-draw-and-text.png";
 import LogoTxt from "../assets/dev-vault-logo-text.png";
 import { Link, NavLink } from "react-router-dom";
