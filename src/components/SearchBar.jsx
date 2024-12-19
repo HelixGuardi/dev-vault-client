@@ -7,26 +7,33 @@ import { Link } from "react-router-dom";
 function SearchBar() {
   const [searchValue, setSearchValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-
   
   useEffect(() => {
+    let timer;
+
     if(searchValue !== "") {
-      axios
-        .get(`${import.meta.env.VITE_SERVER_URL}/flipCards?title_like=${searchValue}`)
-        .then((response) => {
-          // console.log(response);
-          setSearchResult(response.data);
-  
-        });
+      timer = setTimeout(() => {
+        axios
+          .get(`${import.meta.env.VITE_SERVER_URL}/flipCards?title_like=${searchValue}`)
+          .then((response) => {
+            // console.log(response);
+            setSearchResult(response.data);
+          });
+      }, 1000)
     } else {
       setSearchResult([])
     }
+
+    return () => clearTimeout(timer);
   }, [searchValue]);
+
 
   const handleSearch = (event) => {
     // console.log(event.target.value);
     setSearchValue(event.target.value);
   };
+
+
 
   return (
     <>
@@ -49,7 +56,7 @@ function SearchBar() {
         <div id="search-results">
           {searchResult.map((eachResult) => {
             return(
-              <Link to={`/details/${eachResult.id}/${eachResult.title}`}>
+              <Link to={`/details/${eachResult.id}/${eachResult.title}`} key={eachResult.id}>
                 <p>{eachResult.title}</p>;
               </Link>
             ) 

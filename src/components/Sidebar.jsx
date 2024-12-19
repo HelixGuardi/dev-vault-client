@@ -74,10 +74,9 @@ function Sidebar(props) {
           {technologies.map((eachTech) => {
             return (
               <>
-                <label key={eachTech.id}>
-                </label>
-                  <input type="checkbox" style={{marginRight: "5px"}} value={eachTech.name} onChange={handleCheckBoxChange} />
-                  {eachTech.name}
+                <label key={eachTech.id}></label>
+                <input type="checkbox" style={{marginRight: "5px"}} value={eachTech.name} onChange={handleCheckBoxChange} />
+                {eachTech.name}
               </>
             );
           })}
