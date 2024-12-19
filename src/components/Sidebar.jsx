@@ -74,9 +74,10 @@ function Sidebar(props) {
           {technologies.map((eachTech) => {
             return (
               <>
-                <label key={eachTech.id}></label>
-                <input type="checkbox" style={{marginRight: "5px"}} value={eachTech.name} onChange={handleCheckBoxChange} />
-                {eachTech.name}
+              <div className="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" value={eachTech.name} onChange={handleCheckBoxChange} className="btn-check" id={eachTech.id} autoComplete="off"/>
+                <label key={eachTech.id} className="btn btn-outline-warning" htmlFor={eachTech.id}>{eachTech.name}</label>
+              </div>
               </>
             );
           })}
