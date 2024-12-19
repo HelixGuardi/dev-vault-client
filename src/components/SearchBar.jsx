@@ -7,21 +7,29 @@ import { Link } from "react-router-dom";
 function SearchBar() {
   const [searchValue, setSearchValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  
+  const [techResults, setTechResults] = useState([]);
+
   useEffect(() => {
     let timer;
 
     if(searchValue !== "") {
       timer = setTimeout(() => {
-        axios
-          .get(`${import.meta.env.VITE_SERVER_URL}/flipCards?title_like=${searchValue}`)
-          .then((response) => {
-            // console.log(response);
-            setSearchResult(response.data);
-          });
+        axios.get(`${import.meta.env.VITE_SERVER_URL}/flipCards?title_like=${searchValue}`)
+        .then((response) => {
+          // console.log(response);
+          return setSearchResult(response.data);
+        }).then(() => {
+            axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies?name_like=${searchValue}`)
+            .then((response) => {
+              // console.log(response);
+              setTechResults(response.data);
+            })
+        })
       }, 1000)
+
     } else {
       setSearchResult([])
+      setTechResults([])
     }
 
     return () => clearTimeout(timer);
@@ -54,6 +62,13 @@ function SearchBar() {
           />
         </div>
         <div id="search-results">
+          {techResults.map((eachTech) => {
+            return(
+              <Link to={`/infoTech/${eachTech.id}/${eachTech.name}`}>
+                <p>{eachTech.name}</p>
+              </Link>
+            )
+          })}
           {searchResult.map((eachResult) => {
             return(
               <Link to={`/details/${eachResult.id}/${eachResult.title}`} key={eachResult.id}>
