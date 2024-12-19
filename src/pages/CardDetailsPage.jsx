@@ -6,14 +6,14 @@ import { PacmanLoader } from "react-spinners";
 function CardDetailsPage() {
 
   const dynamicParams = useParams();
-  console.log(dynamicParams)
+  // console.log(dynamicParams)
 
   const [foundCard, setFoundCard] = useState(null);
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_SERVER_URL}/flipCards/${dynamicParams.flipCardId}?_expand=technology`)
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       setFoundCard(response.data);
     })
   }, [])

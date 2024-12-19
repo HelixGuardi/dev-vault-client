@@ -18,7 +18,7 @@ function CardList(props) {
 
   const getData = () => {
     axios
-      .get(`${import.meta.env.VITE_SERVER_URL}/flipCards?_expand=technology`) // para conseguir los flipcards
+      .get(`${import.meta.env.VITE_SERVER_URL}/flipCards?_expand=technology`) // para conseguir los flipcards + la tech a la que pertenece cada flipCard
       .then((response) => {
         // console.log(response);
         setFlipCards(response.data);

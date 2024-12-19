@@ -12,7 +12,7 @@ function Card(props) {
   return (
     <>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-        <CardFront isFlipped={isFlipped} setIsFlipped={setIsFlipped} eachCard={eachCard}/>
+        <CardFront isFlipped={isFlipped} setIsFlipped={setIsFlipped} eachCard={eachCard} getData={getData}/>
 
         <CardRear isFlipped={isFlipped} setIsFlipped={setIsFlipped} eachCard={eachCard} getData={getData}/>
       </ReactCardFlip>
