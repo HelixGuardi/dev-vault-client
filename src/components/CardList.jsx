@@ -5,9 +5,7 @@ import { PacmanLoader } from "react-spinners";
 
 function CardList(props) {
 
-  // console.log(props);
   const { filteredTechs } = props;
-  // console.log(filteredCards)
 
   const [flipCards, setFlipCards] = useState([]);
 
@@ -20,7 +18,6 @@ function CardList(props) {
     axios
       .get(`${import.meta.env.VITE_SERVER_URL}/flipCards?_expand=technology`) // para conseguir los flipcards + la tech a la que pertenece cada flipCard
       .then((response) => {
-        // console.log(response);
         setFlipCards(response.data);
       })
       .catch((error) => {

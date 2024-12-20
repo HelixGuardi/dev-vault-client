@@ -9,8 +9,7 @@ function TechInfoPage() {
   const [foundTech, setFoundTech] = useState(null);
   const [flipCards, setFlipCards] = useState([]);
 
-  const dynamicParams = useParams(); //parametros dinamicos
-  // console.log(dynamicParams);
+  const dynamicParams = useParams();
 
   useEffect(() => {
     axios
@@ -20,12 +19,12 @@ function TechInfoPage() {
         }?_embed=flipCards`
       )
       .then((response) => {
-        // console.log(response);
         setFoundTech(response.data);
         setFlipCards(response.data.flipCards)
       });
   }, []);
 
+  // loading...
   if (foundTech === null) {
     return (
       <div className="loading-container">

@@ -6,24 +6,23 @@ import { PacmanLoader } from "react-spinners";
 function CardDetailsPage() {
 
   const dynamicParams = useParams();
-  // console.log(dynamicParams)
 
   const [foundCard, setFoundCard] = useState(null);
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_SERVER_URL}/flipCards/${dynamicParams.flipCardId}?_expand=technology`)
     .then((response) => {
-      // console.log(response);
       setFoundCard(response.data);
     })
   }, [dynamicParams.flipCardId])
 
+  // loading...
   if(foundCard === null) {
     return(
       <div className="loading-container">
         <PacmanLoader width={"100%"} color="#FFD166"/>
       </div>
-  )
+    )
   }
 
   return (

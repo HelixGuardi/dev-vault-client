@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function AddNewFlipCardPage() {
 
@@ -9,7 +9,6 @@ function AddNewFlipCardPage() {
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies`)
         .then((response) => {
-            // console.log(response);
             setTechnologies(response.data)
         })
     }, [])
@@ -32,11 +31,9 @@ function AddNewFlipCardPage() {
     const handleImageUrl = (event) => setImageUrl(event.target.value);
     const handleSelectTechnology = (event) => setTechnologyId(event.target.value);
 
-    // console.log(technologyId)
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        // console.log("testing", title, resume, officialDoc, description, imageUrl)
 
         const newFlipCard = {
             title: title,
@@ -50,7 +47,6 @@ function AddNewFlipCardPage() {
 
         axios.post(`${import.meta.env.VITE_SERVER_URL}/flipCards`, newFlipCard)
         .then(() => {
-            // console.log("flip card añadido con exito")
             navigate("/")
         })
         .catch((error) => {

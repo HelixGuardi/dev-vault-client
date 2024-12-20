@@ -16,12 +16,10 @@ function SearchBar() {
       timer = setTimeout(() => {
         axios.get(`${import.meta.env.VITE_SERVER_URL}/flipCards?title_like=${searchValue}`)
         .then((response) => {
-          // console.log(response);
           return setSearchResult(response.data);
         }).then(() => {
             axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies?name_like=${searchValue}`)
             .then((response) => {
-              // console.log(response);
               setTechResults(response.data);
             })
         })
@@ -37,7 +35,6 @@ function SearchBar() {
 
 
   const handleSearch = (event) => {
-    // console.log(event.target.value);
     setSearchValue(event.target.value);
   };
 

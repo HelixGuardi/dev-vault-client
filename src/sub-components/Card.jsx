@@ -5,7 +5,7 @@ import CardRear from "./CardRear";
 
 function Card(props) {
     
-  const {eachCard, setFlipCards, getData} = props;
+  const {eachCard, getData} = props;
 
   const [isFlipped, setIsFlipped] = useState(false);
 

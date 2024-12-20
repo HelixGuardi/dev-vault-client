@@ -21,8 +21,6 @@ function CardFront(props) {
     event.preventDefault();
     incrementFlipCount()
     setIsFlipped(!isFlipped);
-    
-
   };
 
   

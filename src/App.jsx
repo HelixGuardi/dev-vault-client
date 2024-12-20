@@ -22,12 +22,12 @@ function App() {
           path="/details/:flipCardId/:flipCardTitle"
           element={<CardDetailsPage />}
         />
+        <Route path="/infoTech/:techId/:techName" element={<TechInfoPage />} />
         <Route
-          path="/infoTech/:techId/:techName"
-          element={<TechInfoPage />}
+          path="/details/edit-card/:flipCardId/:flipCardTitle"
+          element={<EditFlipCard />}
         />
-        <Route path="/details/edit-card/:flipCardId/:flipCardTitle" element={ <EditFlipCard /> } />
-        <Route path="*" element={ <NotFound /> } />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

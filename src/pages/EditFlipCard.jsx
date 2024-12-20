@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { PacmanLoader } from "react-spinners";
 
 function EditFlipCard() {
 
     const dynamicParams = useParams();
-    // console.log(dynamicParams)
 
     const [technologies, setTechnologies] = useState([]);
 
@@ -25,11 +25,11 @@ function EditFlipCard() {
     const handleDescription = (event) => setDescription(event.target.value);
     const handleImageUrl = (event) => setImageUrl(event.target.value);
     const handleSelectTechnology = (event) => setTechnologyId(event.target.value);
+
     
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies`)
         .then((response) => {
-            // console.log(response);
             setTechnologies(response.data)
         })
 
@@ -45,7 +45,11 @@ function EditFlipCard() {
     },[])
 
     if(technologies.length === 0) {
-        return <p>Loading...</p>
+        return(
+            <div className="loading-container">
+                <PacmanLoader width={"100%"} color="#FFD166"/>
+            </div>
+        )
     }
 
 
@@ -60,7 +64,6 @@ function EditFlipCard() {
             technologyId: technologyId,
             imgUrl: imageUrl,
         }
-
 
         axios.put(`${import.meta.env.VITE_SERVER_URL}/flipCards/${dynamicParams.flipCardId}`, editedFlipCard)
         .then(() => {
