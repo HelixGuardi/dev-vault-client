@@ -8,6 +8,7 @@ import AddNewFlipCard from "./pages/AddNewFlipCardPage";
 import CardDetailsPage from "./pages/CardDetailsPage";
 import TechInfoPage from "./pages/TechInfoPage";
 import EditFlipCard from "./pages/EditFlipCard";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           element={<TechInfoPage />}
         />
         <Route path="/details/edit-card/:flipCardId/:flipCardTitle" element={ <EditFlipCard /> } />
+        <Route path="*" element={ <NotFound /> } />
       </Routes>
       <Footer />
     </>
