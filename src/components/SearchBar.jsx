@@ -2,43 +2,50 @@ import { use, useEffect } from "react";
 import MagnifyingGlass from "../assets/blue-magnifying-glass.png";
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 function SearchBar() {
-  const [searchValue, setSearchValue] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
-  const [techResults, setTechResults] = useState([]);
+  const [searchValue, setSearchValue] = useState(""); // valor del input del searchBar
+  const [searchResult, setSearchResult] = useState([]); // flipCards results
+  const [techResults, setTechResults] = useState([]); // technologies results
 
   useEffect(() => {
     let timer;
 
-    if(searchValue !== "") {
+    if (searchValue !== "") {
       timer = setTimeout(() => {
-        axios.get(`${import.meta.env.VITE_SERVER_URL}/flipCards?title_like=${searchValue}`)
-        .then((response) => {
-          return setSearchResult(response.data);
-        }).then(() => {
-            axios.get(`${import.meta.env.VITE_SERVER_URL}/technologies?name_like=${searchValue}`)
-            .then((response) => {
-              setTechResults(response.data);
-            })
-        })
-      }, 1000)
-
+        axios
+          .get(
+            `${
+              import.meta.env.VITE_SERVER_URL
+            }/flipCards?title_like=${searchValue}`
+          )
+          .then((response) => {
+            return setSearchResult(response.data);
+          })
+          .then(() => {
+            axios
+              .get(
+                `${
+                  import.meta.env.VITE_SERVER_URL
+                }/technologies?name_like=${searchValue}`
+              )
+              .then((response) => {
+                setTechResults(response.data);
+              });
+          });
+      }, 1000);
     } else {
-      setSearchResult([])
-      setTechResults([])
+      setSearchResult([]);
+      setTechResults([]);
     }
 
     return () => clearTimeout(timer);
   }, [searchValue]);
 
-
   const handleSearch = (event) => {
     setSearchValue(event.target.value);
   };
-
-
 
   return (
     <>
@@ -60,18 +67,24 @@ function SearchBar() {
         </div>
         <div id="search-results">
           {techResults.map((eachTech) => {
-            return(
-              <Link to={`/infoTech/${eachTech.id}/${eachTech.name}`} key={eachTech.id}>
+            return (
+              <Link
+                to={`/infoTech/${eachTech.id}/${eachTech.name}`}
+                key={eachTech.id}
+              >
                 <p className="search-result-line">{eachTech.name}</p>
               </Link>
-            )
+            );
           })}
           {searchResult.map((eachResult) => {
-            return(
-              <Link to={`/details/${eachResult.id}/${eachResult.title}`} key={eachResult.id}>
+            return (
+              <Link
+                to={`/details/${eachResult.id}/${eachResult.title}`}
+                key={eachResult.id}
+              >
                 <p className="search-result-line">{eachResult.title}</p>
               </Link>
-            ) 
+            );
           })}
         </div>
       </div>

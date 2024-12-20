@@ -13,7 +13,9 @@ function CardRear(props) {
 
   const deleteCard = async () => {
     try {
-      await axios.delete(`${import.meta.env.VITE_SERVER_URL}/flipCards/${eachCard.id}`);
+      await axios.delete(
+        `${import.meta.env.VITE_SERVER_URL}/flipCards/${eachCard.id}`
+      );
       //función para actualizar el estado local del componente padre:
       getData();
     } catch (error) {

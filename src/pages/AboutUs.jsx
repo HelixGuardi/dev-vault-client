@@ -26,7 +26,11 @@ function AboutUs() {
           conceptos más básicos hasta habilidades avanzadas, te acompañamos en
           cada paso de tu camino.
         </p>
-        <p><span>DevVault — porque el conocimiento merece un espacio para prosperar.</span></p>
+        <p>
+          <span>
+            DevVault — porque el conocimiento merece un espacio para prosperar.
+          </span>
+        </p>
       </div>
     </div>
   );

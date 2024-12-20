@@ -4,15 +4,13 @@ import Card from "../sub-components/Card";
 import { PacmanLoader } from "react-spinners";
 
 function CardList(props) {
-
   const { filteredTechs } = props;
 
   const [flipCards, setFlipCards] = useState([]);
 
   useEffect(() => {
-    getData()
+    getData();
   }, []);
-
 
   const getData = () => {
     axios
@@ -23,32 +21,32 @@ function CardList(props) {
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
-  if(flipCards.length === 0) {
-    return(
+  if (flipCards.length === 0) {
+    return (
       <div className="loading-container">
-        <PacmanLoader width={"100%"} color="#FFD166"/>
+        <PacmanLoader width={"100%"} color="#FFD166" />
       </div>
-    )
+    );
   }
 
   return (
-      <section className="card-list-container">
-        {flipCards
+    <section className="card-list-container">
+      {flipCards
         .filter((eachCard) => {
           if (filteredTechs.length === 0) {
-            return true // si no hay tecnologias seleccionadas, incluye todo
+            return true; // si no hay tecnologias seleccionadas, incluye todo
           } else {
             return filteredTechs.includes(eachCard.technology.name); // si hay tecnologias seleccionadas, incluye solo esas
           }
         })
         .map((eachCard) => {
-          return(
-            <Card key={eachCard.id} eachCard={eachCard} getData={getData}/>
-          )
+          return (
+            <Card key={eachCard.id} eachCard={eachCard} getData={getData} />
+          );
         })}
-      </section>
+    </section>
   );
 }
 

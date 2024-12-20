@@ -20,7 +20,7 @@ function TechInfoPage() {
       )
       .then((response) => {
         setFoundTech(response.data);
-        setFlipCards(response.data.flipCards)
+        setFlipCards(response.data.flipCards);
       });
   }, []);
 
@@ -32,7 +32,6 @@ function TechInfoPage() {
       </div>
     );
   }
-
 
   return (
     <div className="tech-info-container">
@@ -55,9 +54,7 @@ function TechInfoPage() {
       </section>
       <div className="related-flip-cards-container">
         {flipCards.map((eachCard) => {
-          return(
-            <Card key={eachCard.id} eachCard={eachCard}/>
-          )
+          return <Card key={eachCard.id} eachCard={eachCard} />;
         })}
       </div>
     </div>

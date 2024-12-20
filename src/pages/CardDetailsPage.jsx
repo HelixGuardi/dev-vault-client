@@ -4,25 +4,29 @@ import { Link, useParams } from "react-router-dom";
 import { PacmanLoader } from "react-spinners";
 
 function CardDetailsPage() {
-
   const dynamicParams = useParams();
 
   const [foundCard, setFoundCard] = useState(null);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_SERVER_URL}/flipCards/${dynamicParams.flipCardId}?_expand=technology`)
-    .then((response) => {
-      setFoundCard(response.data);
-    })
-  }, [dynamicParams.flipCardId])
+    axios
+      .get(
+        `${import.meta.env.VITE_SERVER_URL}/flipCards/${
+          dynamicParams.flipCardId
+        }?_expand=technology`
+      )
+      .then((response) => {
+        setFoundCard(response.data);
+      });
+  }, [dynamicParams.flipCardId]);
 
   // loading...
-  if(foundCard === null) {
-    return(
+  if (foundCard === null) {
+    return (
       <div className="loading-container">
-        <PacmanLoader width={"100%"} color="#FFD166"/>
+        <PacmanLoader width={"100%"} color="#FFD166" />
       </div>
-    )
+    );
   }
 
   return (
