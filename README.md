@@ -9,8 +9,8 @@
 
 DevVault es una aplicación para gestionar tecnologías y sus respectivos flipCards, facilitando el aprendizaje y el seguimiento de información técnica de forma organizada.  
 
-- **[Repositorio del Cliente](https://github.com/usuario/devvault-client)**  
-- **[Repositorio del Servidor](https://github.com/usuario/devvault-server)**
+- **[Repositorio del Cliente](https://github.com/HelixGuardi/dev-vault-client)**  
+- **[Repositorio del Servidor](https://github.com/HelixGuardi/dev-vault-server)**
 
 ---
 
