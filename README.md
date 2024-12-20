@@ -1,6 +1,6 @@
 # DevVault Project
 
-[![App Logo](https://via.placeholder.com/150)](https://devvaultproject.netlify.app)  
+[![App Logo](./src/assets/dev-vault-logo-draw-and-text.png)](https://devvaultproject.netlify.app)  
 **[¡Mira la App!](https://devvaultproject.netlify.app)**
 
 ---
